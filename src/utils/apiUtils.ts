@@ -7,7 +7,7 @@ export const getAllShows = async (): Promise<Show[]> => {
   const response = await axios.get<Show[]>(`${API_BASE_URL}/shows`);
   return response.data;
 };
-export const getShowById = async (id: number): Promise<Show[]> => {
+export const getShowById = async (id: number): Promise<Show> => {
   const response = await axios.get(`${API_BASE_URL}/shows/${id}`);
   return response.data;
 };

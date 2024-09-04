@@ -4,7 +4,7 @@
 <div class="card-body">
     <h5 class="card-title">{{ show.name }}</h5>
     <p class="card-text">{{ show.genres.join(', ') }}</p>
-    <router-link to="`/shows/${show.id}`" class="btn btn-primary">Details</router-link>
+    <router-link :to="`/shows/${show.id}`" class="btn btn-primary">Details</router-link>
 
 </div>
   </div>

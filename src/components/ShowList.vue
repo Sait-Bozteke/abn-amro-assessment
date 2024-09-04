@@ -1,6 +1,11 @@
 <template>
   <div>
-    <ShowCard />
+    <ShowCard
+    v-for="show in shows"
+    :key="show.id"
+    :show="show"
+    class="col-md-4 mb-4"
+    />
   </div>
 </template>
 <script lang="ts">

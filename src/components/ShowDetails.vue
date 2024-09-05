@@ -1,11 +1,19 @@
 <template>
-  <div v-if="show" class="card">
-    <img :src="show.image?.original" class="card-img-top" alt="Show Image " />
-    <div>
-      <h5 class="card-title">{{ show.name }}</h5>
-      <p class="card-text" v-html="show.summary"></p>
-      <p><strong>Genres:</strong>{{ show.genres.join(", ") }}</p>
-      <p><strong>Rating:</strong>{{ show.rating.average }}</p>
+  <div v-if="show" class="container my-4">
+    <div class="row">
+      <div class="col-md-4">
+        <img
+          :src="show.image?.original"
+          class="img-fluid rounded"
+          alt="Show Image "
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ show.name }}</h5>
+        <p class="card-text" v-html="show.summary"></p>
+        <p><strong>Genres:</strong>{{ show.genres.join(", ") }}</p>
+        <p><strong>Rating:</strong>{{ show.rating.average }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -31,4 +39,9 @@ export default defineComponent({
   },
 });
 </script>
-<style lang=""></style>
+<style scoped>
+.img-fluid {
+  max-height: 500px;
+  object-fit: cover;
+}
+</style>

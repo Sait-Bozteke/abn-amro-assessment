@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-4">
         <img
-          :src="show.image?.original"
+          :src="show.image?.medium"
           class="img-fluid rounded"
           alt="Show Image "
         />

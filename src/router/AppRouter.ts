@@ -1,19 +1,25 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import ShowView from "../views/ShowView.vue";
-import ShowDetails from "../components/ShowDetails.vue";
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import GenreView from '../views/GenreView.vue';
+import ShowDetails from '../components/ShowDetails.vue';
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: HomeView,
   },
   {
-    path: "/shows/:id",
-    name: "ShowDetails",
+    path: '/genre/:genre',
+    name: 'GenreView',
+    component: GenreView,
+    props: true,
+  },
+  {
+    path: '/shows/:id',
+    name: 'ShowDetails',
     component: ShowDetails,
-    props:true
+    props: true,
   },
 ];
 

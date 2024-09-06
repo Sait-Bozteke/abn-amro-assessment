@@ -28,7 +28,7 @@ The **ABN AMRO ASSESSMENT** is a Vue.js application built using **Vue 3** and **
 Before starting, ensure you have the following installed on your machine:
 
 - **Node.js** (v20 or higher)
-- **npm** for managing dependencies
+- **npm** (v10 or higher) for managing dependencies
 
 You will also need access to the TVMaze API or a similar API for fetching TV shows and genres.
 
@@ -115,7 +115,7 @@ Here are some common commands you might use:
    Open your browser and navigate to:
 
     ```plaintext
-    http://localhost:3000
+    http://localhost:5174/
     ```
 
 ### Application Features:

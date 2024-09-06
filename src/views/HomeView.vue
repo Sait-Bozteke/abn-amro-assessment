@@ -1,30 +1,32 @@
 <template>
   <div class="container my-4">
-    <h1 class="mb-4">Categories</h1>
+    <h1 class="text-center mb-4">Select a Genre</h1>
     <div class="row">
-      <div class="col-md-4 mb-3" v-for="category in categories" :key="category">
-        <router-link :to="{ name: 'GenreView', params: { genre: category } }" class="card text-center h-100">
-          <div class="card-body">
-            <h5 class="card-title">{{ category }}</h5>
-            <p class="card-text">Explore {{ category }} TV shows</p>
-          </div>
-        </router-link>
-      </div>
+      <CategoryCard
+        v-for="genre in genres"
+        :key="genre"
+        :genre="genre"
+        class="col-md-6 col-lg-4 mb-4"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
+import CategoryCard from "../components/CategoryCard.vue";
+import { useGenreStore } from "../store/genreStore";
 
 export default defineComponent({
+  components: {
+    CategoryCard,
+  },
   setup() {
-    const categories = ['Drama', 'Comedy', 'Action', 'Thriller', 'Sci-Fi'];
-
+    const genreStore = useGenreStore();
     return {
-      categories
+      genres: genreStore.genres,
     };
-  }
+  },
 });
 </script>
 

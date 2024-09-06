@@ -39,7 +39,7 @@ You will also need access to the TVMaze API or a similar API for fetching TV sho
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/sait-bozteke/abn-amro-assessment.git
+    git clone https://github.com/Sait-Bozteke/abn-amro-assessment.git
     ```
 
 2. **Navigate to the project directory**:

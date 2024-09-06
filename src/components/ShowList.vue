@@ -24,11 +24,11 @@
     />
   </div>
 </template>
+
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
-import ShowCard from "./ShowCard.vue";
-import { Show } from "../types/Show";
-import { getAllShows, searchShowByName } from "../utils/apiUtils";
+import { defineComponent, ref, computed, onMounted } from 'vue';
+import { useShowStore } from '../store/showStore';
+import ShowCard from './ShowCard.vue';
 
 export default defineComponent({
   components: {
@@ -36,47 +36,29 @@ export default defineComponent({
   },
 
   setup() {
-    const shows = ref<Show[]>([]);
-    const searchQuery = ref("");
-    const isLoading = ref(true);
-    const error = ref<string | null>(null);
-
+    const showStore = useShowStore();
+    const searchQuery = ref('');
+    
+    // Computed properties for easier access to store state
+    const shows = computed(() => showStore.shows);
+    const isLoading = computed(() => showStore.loading);
+    const error = computed(() => showStore.error);
+    
     const fetchShows = async () => {
-      isLoading.value = true;
-      try {
-        const data = await getAllShows();
-        shows.value = data;
-      } catch (e) {
-        error.value = "Failed to load shows. Please try again later";
-      } finally {
-        isLoading.value = false;
-      }
+      await showStore.fetchAllShows();
     };
 
     const handleSearch = async () => {
       if (!searchQuery.value.trim()) {
-        fetchShows();
+        // If search query is empty, fetch all shows
+        await fetchShows();
         return;
       }
-      isLoading.value = true;
-      try {
-        const data = await searchShowByName(searchQuery.value);
-        shows.value = data;
-
-        if (data.length === 0) {
-          error.value = `No shows found for "${searchQuery.value}"`;
-        } else {
-          error.value = null;
-        }
-      } catch {
-        error.value = "Failed to search shows. Please try again later";
-      } finally {
-        isLoading.value = false;
-      }
+      await showStore.searchShows(searchQuery.value);
     };
 
     onMounted(async () => {
-      fetchShows();
+      await fetchShows();
     });
 
     return {
@@ -89,3 +71,7 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+/* Add any additional styles if needed */
+</style>

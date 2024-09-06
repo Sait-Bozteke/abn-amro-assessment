@@ -29,7 +29,9 @@ export default defineComponent({
     const route = useRoute();
     const showId = Number(route.params.id);
 
-    onMounted(showStore.fetchShowById(showId));
+    onMounted(async()=>{
+     await showStore.fetchShowById(showId)
+    });
 
     return {
       show: showStore.selectedShow,

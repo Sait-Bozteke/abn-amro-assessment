@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img :src="show.image?.medium" class="card-img-top" alt="Show Image" />
+    <img :src="show.image?.original" class="card-img-top" alt="Show Image" />
     <div class="card-body">
       <h5 class="card-title">{{ show.name }}</h5>
       <p class="card-text">Genres: {{ show.genres.join(", ") }}</p>

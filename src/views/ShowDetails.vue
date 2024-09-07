@@ -11,8 +11,8 @@
       <div class="col-md-8">
         <h2>{{ show.name }}</h2>
         <p v-html="show.summary" class="mb-3"></p>
-        <p><strong>Genres:</strong> {{ show.genres?.join(", ") || "N/A" }}</p>
-        <p><strong>Rating:</strong> {{ show.rating?.average || "N/A" }}</p>
+        <p><strong>Genres:</strong> {{ show.genres?.join(", ")}}</p>
+        <p><strong>Rating:</strong> {{ show.rating?.average }}</p>
       </div>
     </div>
   </div>

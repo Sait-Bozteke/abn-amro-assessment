@@ -7,7 +7,7 @@
   </div>
   <div class="row">
     <ShowCard
-      v-for="show in shows"
+      v-for="show in sortedShows"
       :key="show.id"
       :show="show"
       class="col-md-4 mb-4"
@@ -27,12 +27,17 @@ export default defineComponent({
 
   setup() {
     const showStore = useShowStore();
-    
-    // Computed properties for easier access to store state
+
     const shows = computed(() => showStore.shows);
     const isLoading = computed(() => showStore.loading);
     const error = computed(() => showStore.error);
-    
+
+    const sortedShows = computed(() => {
+      return shows.value
+        .filter(show => show.rating && show.rating.average !== null) // Filter out shows with no rating
+        .sort((a, b) => (b.rating.average || 0) - (a.rating.average || 0));
+    });
+
     const fetchShows = async () => {
       await showStore.fetchAllShows();
     };
@@ -42,11 +47,10 @@ export default defineComponent({
     });
 
     return {
-      shows,
+      sortedShows,
       isLoading,
       error,
     };
   },
 });
 </script>
-

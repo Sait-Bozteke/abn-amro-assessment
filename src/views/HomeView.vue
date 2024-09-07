@@ -6,7 +6,7 @@
         v-for="genre in genres"
         :key="genre"
         :genre="genre"
-        class="col-md-6 col-lg-4 mb-4"
+        class="col-md-6 col-lg-12 "
       />
     </div>
   </div>

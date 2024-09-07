@@ -11,15 +11,19 @@
       <div class="col-md-8">
         <h2>{{ show.name }}</h2>
         <p v-html="show.summary" class="mb-3"></p>
-        <p><strong>Genres:</strong> {{ show.genres.join(", ") }}</p>
-        <p><strong>Rating:</strong> {{ show.rating.average }}</p>
+        <p><strong>Genres:</strong> {{ show.genres?.join(", ") || "N/A" }}</p>
+        <p><strong>Rating:</strong> {{ show.rating?.average || "N/A" }}</p>
       </div>
     </div>
+  </div>
+  <div v-else>
+    <p v-if="loading">Loading...</p>
+    <p v-if="error">{{ error }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, onMounted, ref, computed } from "vue";
 import { useRoute } from "vue-router";
 import { useShowStore } from "../store/showStore";
 
@@ -28,15 +32,29 @@ export default defineComponent({
     const showStore = useShowStore();
     const route = useRoute();
     const showId = ref(Number(route.params.id));
+    const error = ref<string | null>(null);
+    const loading = ref(true);
+
+    const fetchShowId = async () => {
+      try {
+        await showStore.fetchShowById(showId.value);
+      } catch (err) {
+        error.value = "Error fetching show data";
+      } finally {
+        loading.value = false;
+      }
+    };
 
     onMounted(async () => {
-      await showStore.fetchShowById(showId.value);
+      await fetchShowId();
     });
 
+    const show = computed(() => showStore.selectedShow);
+
     return {
-      show: showStore.selectedShow,
-      loading: showStore.loading,
-      error: showStore.error,
+      show,
+      loading,
+      error,
     };
   },
 });

@@ -25,7 +25,7 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref, computed } from "vue";
 import { useRoute } from "vue-router";
-import { useShowStore } from "../store/showStore";
+import { useShowStore } from "../store/showStore"
 
 export default defineComponent({
   setup() {

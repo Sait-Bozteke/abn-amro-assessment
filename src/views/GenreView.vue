@@ -2,31 +2,26 @@
   <div class="container my-4">
     <h2 class="mb-4">{{ genre }} Shows</h2>
 
-    <!-- Search Bar -->
     <div class="input-group mb-4">
       <input
         v-model="searchQuery"
-        @input="handleSearch"
         type="text"
         class="form-control"
         placeholder="Search for shows"
       />
-      <button @click="handleSearch" class="btn btn-primary">Search</button>
+      <button class="btn btn-primary">Search</button>
     </div>
 
-    <!-- Loading Spinner -->
     <div v-if="loading" class="d-flex justify-content-center mb-4">
       <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
 
-    <!-- Error Message -->
     <div v-if="error" class="alert alert-danger">
       {{ error }}
     </div>
 
-    <!-- Show Cards -->
     <div class="row">
       <ShowCard
         v-for="show in filteredShows"
@@ -53,10 +48,8 @@ export default defineComponent({
     const route = useRoute();
     const genre = route.params.genre as string;
 
-    // Search query state
     const searchQuery = ref('');
 
-    // Computed property to filter shows based on search query and genre
     const filteredShows = computed(() => {
       const query = searchQuery.value.toLowerCase();
       return showStore.shows.filter(show => 
@@ -65,15 +58,10 @@ export default defineComponent({
       );
     });
 
-    // Fetch shows when component mounts
     onMounted(() => {
       showStore.fetchAllShows();
     });
 
-    // Handle search input changes
-    const handleSearch = () => {
-      // The filteredShows computed property updates automatically
-    };
 
     return {
       genre,
@@ -81,7 +69,6 @@ export default defineComponent({
       filteredShows,
       loading: showStore.loading,
       error: showStore.error,
-      handleSearch,
     };
   },
 });
@@ -98,10 +85,10 @@ export default defineComponent({
 }
 
 .input-group input {
-  border-radius: 0.25rem 0 0 0.25rem; /* Rounded corners for the input */
+  border-radius: 0.25rem 0 0 0.25rem; 
 }
 
 .input-group button {
-  border-radius: 0 0.25rem 0.25rem 0; /* Rounded corners for the button */
+  border-radius: 0 0.25rem 0.25rem 0; 
 }
 </style>

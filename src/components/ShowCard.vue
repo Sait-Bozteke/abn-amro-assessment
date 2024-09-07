@@ -8,7 +8,7 @@
       <p class="card-text">
         <strong>Rating:</strong>
         <span :class="ratingClass" class="badge rounded-pill">{{
-          show.rating.average || "N/A"
+          show.rating.average 
         }}</span>
       </p>
 

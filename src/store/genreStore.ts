@@ -3,6 +3,6 @@ import { Show } from "../types/Show";
 
 export const useGenreStore = defineStore('genreStore', {
     state: ()=>({
-        genres : ['Drama', 'Comedy', 'Action', 'Sci-Fi', 'Fantasys']
+        genres : ['Drama', 'Comedy', 'Action']
     })
 })

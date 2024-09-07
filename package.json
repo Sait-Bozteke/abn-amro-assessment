@@ -55,7 +55,7 @@
       "url": "http://localhost/"
     },
     "setupFilesAfterEnv": [
-      "<rootDir>/node_modules/@testing-library/jest-dom/extend-expect"
+      "@testing-library/jest-dom"
     ]
   }
 }

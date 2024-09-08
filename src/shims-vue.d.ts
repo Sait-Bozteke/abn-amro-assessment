@@ -1,9 +1,9 @@
 declare module '*.vue' {
-  import type { DefineComponent } from 'vue';
-  const component: DefineComponent<{}, {}, object>; 
+  import { DefineComponent } from 'vue';
+  const component: DefineComponent<object, object, Record<string, unknown>>;
   export default component;
 }
 declare module 'dompurify' {
-  const DOMPurify: any;
+  const DOMPurify: unknown;
   export default DOMPurify;
 }

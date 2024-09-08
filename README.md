@@ -110,18 +110,10 @@ Here are some common commands you might use:
 
 ### Running the Application
 
-1. **Start the development server**:
+**Start the development server**:
 
    ```bash
    npm run dev
-   ```
-
-2. **Access the application**:
-
-   Open your browser and navigate to:
-
-   ```plaintext
-   http://localhost:5174/
    ```
 
 ### Application Features:

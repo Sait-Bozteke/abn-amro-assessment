@@ -38,7 +38,7 @@ export default defineComponent({
       if (rating < 6) return 'bg-danger';
       if (rating >= 6 && rating <= 8) return 'bg-warning text-dark';
       if (rating > 8) return 'bg-success';
-      return 'bg-secondary'; // Default case
+      return 'bg-secondary';
     });
     return {
       ratingClass,

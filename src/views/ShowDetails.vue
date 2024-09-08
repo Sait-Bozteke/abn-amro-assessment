@@ -10,6 +10,7 @@
       </div>
       <div class="col-md-8">
         <h2>{{ show.name }}</h2>
+        // eslint-disable-next-line vue/no-v-html
         <p class="mb-3" v-html="safeSummary"></p>
         <p><strong>Genres:</strong> {{ show.genres?.join(', ') }}</p>
         <p><strong>Rating:</strong> {{ show.rating?.average }}</p>

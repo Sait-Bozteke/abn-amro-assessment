@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import CategoryCard from '@/components/CategoryCard.vue'; // Adjust the path as necessary
+import CategoryCard from '@/components/CategoryCard.vue';
 
 describe('CategoryCard.vue', () => {
   it('renders genre and description correctly', () => {

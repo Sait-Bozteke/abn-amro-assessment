@@ -112,9 +112,9 @@ Here are some common commands you might use:
 
 **Start the development server**:
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 ### Application Features:
 

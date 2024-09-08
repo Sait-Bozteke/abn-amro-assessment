@@ -1,8 +1,7 @@
-import { defineStore } from "pinia";
-import { Show } from "../types/Show";
+import { defineStore } from 'pinia';
 
 export const useGenreStore = defineStore('genreStore', {
-    state: ()=>({
-        genres : ['Drama', 'Comedy', 'Action']
-    })
-})
+  state: () => ({
+    genres: ['Drama', 'Comedy', 'Action'],
+  }),
+});

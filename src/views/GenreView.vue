@@ -52,16 +52,16 @@ export default defineComponent({
 
     const filteredShows = computed(() => {
       const query = searchQuery.value.toLowerCase();
-      return showStore.shows.filter(show => 
-        show.genres.includes(genre) &&
-        show.name.toLowerCase().includes(query)
+      return showStore.shows.filter(
+        (show) =>
+          show.genres.includes(genre) &&
+          show.name.toLowerCase().includes(query),
       );
     });
 
     onMounted(() => {
       showStore.fetchAllShows();
     });
-
 
     return {
       genre,
@@ -85,10 +85,10 @@ export default defineComponent({
 }
 
 .input-group input {
-  border-radius: 0.25rem 0 0 0.25rem; 
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .input-group button {
-  border-radius: 0 0.25rem 0.25rem 0; 
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 </style>

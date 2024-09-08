@@ -10,8 +10,8 @@
       </div>
       <div class="col-md-8">
         <h2>{{ show.name }}</h2>
-        <p v-html="show.summary" class="mb-3"></p>
-        <p><strong>Genres:</strong> {{ show.genres?.join(", ")}}</p>
+        <p  class="mb-3" v-html="show.summary"></p>
+        <p><strong>Genres:</strong> {{ show.genres?.join(', ') }}</p>
         <p><strong>Rating:</strong> {{ show.rating?.average }}</p>
       </div>
     </div>
@@ -23,9 +23,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, computed } from "vue";
-import { useRoute } from "vue-router";
-import { useShowStore } from "../store/showStore"
+import { defineComponent, onMounted, ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { useShowStore } from '../store/showStore';
 
 export default defineComponent({
   setup() {
@@ -38,8 +38,8 @@ export default defineComponent({
     const fetchShowId = async () => {
       try {
         await showStore.fetchShowById(showId.value);
-      } catch (err) {
-        error.value = "Error fetching show data";
+      } catch {
+        error.value = 'Error fetching show data';
       } finally {
         loading.value = false;
       }

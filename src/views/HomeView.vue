@@ -6,16 +6,16 @@
         v-for="genre in genres"
         :key="genre"
         :genre="genre"
-        class="col-md-6 col-lg-12 "
+        class="col-md-6 col-lg-12"
       />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import CategoryCard from "../components/CategoryCard.vue";
-import { useGenreStore } from "../store/genreStore";
+import { defineComponent } from 'vue';
+import CategoryCard from '../components/CategoryCard.vue';
+import { useGenreStore } from '../store/genreStore';
 
 export default defineComponent({
   components: {

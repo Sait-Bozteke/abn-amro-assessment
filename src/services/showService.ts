@@ -1,6 +1,5 @@
-import axios from "axios";
-import { Show } from "../types/Show";
-import { apiShows, apiShow } from "../utils/apiUtils";
+import { Show } from '../types/Show';
+import { apiShows, apiShow } from '../utils/apiUtils';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 

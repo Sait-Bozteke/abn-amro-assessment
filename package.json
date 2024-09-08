@@ -37,7 +37,7 @@
     "ts-jest": "^29.2.5",
     "typescript": "^5.5.4",
     "vite": "^5.4.1",
-    "vue-jest": "^5.0.0-alpha.10",
+    "vue-jest": "^3.0.7",
     "vue-tsc": "^2.0.29"
   },
   "jest": {

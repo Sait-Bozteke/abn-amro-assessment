@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-8">
         <h2>{{ show.name }}</h2>
-        <p  class="mb-3" v-html="safeSummary"></p>
+        <p class="mb-3" v-html="safeSummary"></p>
         <p><strong>Genres:</strong> {{ show.genres?.join(', ') }}</p>
         <p><strong>Rating:</strong> {{ show.rating?.average }}</p>
       </div>
@@ -51,13 +51,15 @@ export default defineComponent({
     });
 
     const show = computed(() => showStore.selectedShow);
-    const safeSummary = computed(() => DOMPurify.sanitize(show.value?.summary || ''));
+    const safeSummary = computed(() =>
+      DOMPurify.sanitize(show.value?.summary || ''),
+    );
 
     return {
       show,
       loading,
       error,
-      safeSummary
+      safeSummary,
     };
   },
 });

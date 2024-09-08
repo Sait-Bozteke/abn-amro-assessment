@@ -38,21 +38,21 @@ You will also need access to the TVMaze API or a similar API for fetching TV sho
 
 1. **Clone the repository**:
 
-    ```bash
-    git clone https://github.com/Sait-Bozteke/abn-amro-assessment.git
-    ```
+   ```bash
+   git clone https://github.com/Sait-Bozteke/abn-amro-assessment.git
+   ```
 
 2. **Navigate to the project directory**:
 
-    ```bash
-    cd abn-amro-assessment
-    ```
+   ```bash
+   cd abn-amro-assessment
+   ```
 
 3. **Install the necessary dependencies**:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 ---
 
@@ -62,27 +62,33 @@ Here are some common commands you might use:
 
 - **Start the development server**:
 
-    ```bash
-    npm run dev
-    ```
+  ```bash
+  npm run dev
+  ```
 
 - **Lint your code**:
 
-    ```bash
-    npm run lint
-    ```
+  ```bash
+  npm run lint
+  ```
 
 - **Run tests**:
 
-    ```bash
-    npm run test
-    ```
+  ```bash
+  npm run test:unit
+  ```
+
+- **Run prettier**:
+
+  ```bash
+  npm run format
+  ```
 
 - **Build the project**:
 
-    ```bash
-    npm run build
-    ```
+  ```bash
+  npm run build
+  ```
 
 ---
 
@@ -92,9 +98,9 @@ Here are some common commands you might use:
 
    Create a `.env` file in the root directory with the following variable:
 
-    ```env
-    VITE_API_BASE_URL=https://api.tvmaze.com
-    ```
+   ```env
+   VITE_API_BASE_URL=https://api.tvmaze.com
+   ```
 
    Adjust the `VITE_API_BASE_URL` to point to the correct API endpoint for fetching TV shows and genres.
 
@@ -106,17 +112,17 @@ Here are some common commands you might use:
 
 1. **Start the development server**:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 2. **Access the application**:
 
    Open your browser and navigate to:
 
-    ```plaintext
-    http://localhost:5174/
-    ```
+   ```plaintext
+   http://localhost:5174/
+   ```
 
 ### Application Features:
 
@@ -144,3 +150,4 @@ Here are some common commands you might use:
 ├── vite.config.ts      # Vite configuration
 ├── package.json        # Project metadata and dependencies
 └── README.md           # Project documentation
+```

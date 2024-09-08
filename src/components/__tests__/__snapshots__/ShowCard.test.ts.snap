@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowCard.vue renders correctly and matches the snapshot 1`] = `
+"<div class="card"><img src="http://example.com/image.jpg" class="card-img-top" alt="Show Image">
+  <div class="card-body">
+    <h5 class="card-title">Test Show</h5>
+    <p class="card-text">Genres: Drama, Action</p>
+    <p class="card-text"><strong>Rating:</strong><span class="bg-warning text-dark badge rounded-pill">7.5</span></p><a class="btn btn-primary"> Details </a>
+  </div>
+</div>"
+`;

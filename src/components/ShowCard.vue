@@ -1,10 +1,22 @@
 <template>
-  <div :class="ratingClass">
-    <img :src="show.image.original" alt="Show Image" />
-    <h2 class="card-title">{{ show.name }}</h2>
-    <p class="card-text">Genres: {{ show.genres.join(', ') }}</p>
-    <p class="card-text">{{ show.summary }}</p>
-    <p class="card-text">Rating: {{ show.rating.average }}</p>
+  <div class="card">
+    <img :src="show.image?.original" class="card-img-top" alt="Show Image" />
+    <div class="card-body">
+      <h5 class="card-title">{{ show.name }}</h5>
+      <p class="card-text">Genres: {{ show.genres.join(', ') }}</p>
+      <p class="card-text">
+        <strong>Rating:</strong>
+        <span :class="[ratingClass, 'badge', 'rounded-pill']">
+          {{ show.rating.average }}
+        </span>
+      </p>
+      <router-link
+        :to="{ name: 'ShowDetails', params: { id: show.id } }"
+        class="btn btn-primary"
+      >
+        Details
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -19,7 +31,6 @@ export default defineComponent({
       required: true,
     },
   },
-
   setup(props) {
     const ratingClass = computed(() => {
       const rating = props.show.rating.average;
@@ -27,9 +38,8 @@ export default defineComponent({
       if (rating < 6) return 'bg-danger';
       if (rating >= 6 && rating <= 8) return 'bg-warning text-dark';
       if (rating > 8) return 'bg-success';
-      return 'bg-secondary';
+      return 'bg-secondary'; // Default case
     });
-
     return {
       ratingClass,
     };
@@ -38,5 +48,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* Add your styles here */
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
 </style>

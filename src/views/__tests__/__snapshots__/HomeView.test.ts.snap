@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeView.vue renders correctly and matches snapshot 1`] = `
+"<div class="container my-4">
+  <h1 class="text-center mb-4">Select a Genre</h1>
+  <div class="row">
+    <category-card-stub genre="Comedy" class="col-md-6 col-lg-12"></category-card-stub>
+    <category-card-stub genre="Drama" class="col-md-6 col-lg-12"></category-card-stub>
+    <category-card-stub genre="Action" class="col-md-6 col-lg-12"></category-card-stub>
+  </div>
+</div>"
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenreView.vue renders correctly and matches snapshot 1`] = `
+"<div class="container my-4" genre="Drama">
+  <h2 class="mb-4"> Shows</h2>
+  <div class="input-group mb-4"><input type="text" class="form-control" placeholder="Search for shows"><button class="btn btn-primary">Search</button></div>
+  <!--v-if-->
+  <!--v-if-->
+  <div class="row"></div>
+</div>"
+`;

@@ -29,8 +29,7 @@ Before starting, ensure you have the following installed on your machine:
 
 - **Node.js** (v20 or higher)
 - **npm** (v10 or higher) for managing dependencies
-
-You will also need access to the TVMaze API or a similar API for fetching TV shows and genres.
+- TVMaze API or similar API for fetching TV shows and genres
 
 ---
 
@@ -57,8 +56,6 @@ You will also need access to the TVMaze API or a similar API for fetching TV sho
 ---
 
 ## Commands
-
-Here are some common commands you might use:
 
 - **Start the development server**:
 
@@ -96,13 +93,11 @@ Here are some common commands you might use:
 
 1. **Environment Variables**:
 
-   Create a `.env` file in the root directory with the following variable:
+   The project requires an `.env` file in the root directory:
 
    ```env
-   VITE_API_BASE_URL=https://api.tvmaze.com
+   VITE_API_BASE_URL=https://your_api_url_here
    ```
-
-   Adjust the `VITE_API_BASE_URL` to point to the correct API endpoint for fetching TV shows and genres.
 
 ---
 
@@ -115,12 +110,6 @@ Here are some common commands you might use:
 ```bash
 npm run dev
 ```
-
-### Application Features:
-
-- **Home Page**: Browse a list of TV show genres.
-- **Genre Page**: View TV shows categorized by genre.
-- **Show Details Page**: See detailed information about a selected show, including its summary, genres, and ratings.
 
 ---
 
@@ -140,6 +129,11 @@ npm run dev
 ├── public              # Public static files
 ├── .env                # Environment configuration file
 ├── vite.config.ts      # Vite configuration
+├── jest.config.js      # Jest configuration
+├── .eslintrc.js        # ESLint configuration
+├── .prettierrc         # Prettier configuration
 ├── package.json        # Project metadata and dependencies
 └── README.md           # Project documentation
 ```
+
+---
